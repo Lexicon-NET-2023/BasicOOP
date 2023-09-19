@@ -18,9 +18,9 @@ namespace BasicOOP
         public string Name { get; set; } = "";// string.Empty;
         //more props
 
-        public void Do()
+        public virtual void Do()
         {
-            Console.WriteLine("Person d");
+            Console.WriteLine("Person do");
         }
     }
 
@@ -32,5 +32,11 @@ namespace BasicOOP
     internal class Admin  : Employee
     {
         public string? Department { get; set; }
+
+        public override void Do()
+        {
+           // base.Do();
+            Console.WriteLine("Admin do");
+        }
     }
 }
