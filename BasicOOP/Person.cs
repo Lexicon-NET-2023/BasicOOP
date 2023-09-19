@@ -6,10 +6,22 @@ using System.Threading.Tasks;
 
 namespace BasicOOP
 {
-    internal class Person
+
+    internal interface IPerson
+    {
+        string Name { get; set; }
+        void Do();
+    }
+
+    internal class Person : IPerson
     {
         public string Name { get; set; } = "";// string.Empty;
         //more props
+
+        public void Do()
+        {
+            Console.WriteLine("Person d");
+        }
     }
 
     internal class Employee  : Person
@@ -19,6 +31,6 @@ namespace BasicOOP
     
     internal class Admin  : Employee
     {
-        public string Department { get; set; }
+        public string? Department { get; set; }
     }
 }
