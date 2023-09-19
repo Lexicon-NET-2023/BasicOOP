@@ -4,7 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Person person = new Employee() {Name = "Nisse", Salary = 25000 };
+            //FirstPart();
+
+        }
+
+        private static void FirstPart()
+        {
+            Person person = new Employee() { Name = "Nisse", Salary = 25000 };
             person.Name = "Kalle";
             person.Do();
 
@@ -18,7 +24,7 @@
             //string departmentName = admin3.Department;
             //  var length = departmentName.Length;
             admin3.Do();
-            
+
 
             Do(admin3);
             Do(admin2);
@@ -36,9 +42,7 @@
             {
                 p.Do();
             }
-            
         }
-
 
         public static void Do(Person person)
         {
