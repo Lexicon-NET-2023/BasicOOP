@@ -9,6 +9,43 @@
             var c = new Car("Volvo", "740");
             Console.WriteLine(c.Drive(20));
 
+            IDrivable audi = new Audi();
+
+            var vehicles = new List<IDrivable>();
+            vehicles.Add(v);
+            vehicles.Add(c);
+            vehicles.Add(audi);
+
+            foreach (IDrivable vehicle in vehicles)
+            {
+                Console.WriteLine(vehicle.Drive(50));
+
+                //Audi audi2 = (Audi)vehicle;
+
+                //Audi audi3 = vehicle as Audi;
+                //Console.WriteLine(audi3.AudiSpecialMethod());
+
+                //Audi audi3 = vehicle as Audi;
+
+                //if(audi3 != null)
+                //{
+                //   Console.WriteLine(audi3.AudiSpecialMethod());
+                //}
+
+                //if(vehicle is Audi)
+                //{
+                //    Audi audi2 = (Audi)vehicle;
+                //    audi2.AudiSpecialMethod();
+
+                //} 
+                
+                if(vehicle is Audi castedToAudi)
+                {
+                    castedToAudi.AudiSpecialMethod();
+                }
+
+            }
+
         }
 
         private static void FirstPart()

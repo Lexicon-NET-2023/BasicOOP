@@ -40,9 +40,27 @@ namespace BasicOOP
             Model = model;
         }
 
+        public override string Drive(int distance)
+        {
+            return $"{base.Drive(distance)} from car";
+        }
+
         public void Stop()
         {
             //Do something!!
+        }
+    }
+
+    internal class Audi : Car
+    {
+        public Audi(string model = "A4") : base("Audi", model)
+        {
+            
+        }
+
+        public string AudiSpecialMethod()
+        {
+            return "From Audi";
         }
     }
 }
