@@ -5,6 +5,9 @@
         static void Main(string[] args)
         {
             //FirstPart();
+            var v = new Vehicle("Volvo");
+            var c = new Car("Volvo", "740");
+            Console.WriteLine(c.Drive(20));
 
         }
 
