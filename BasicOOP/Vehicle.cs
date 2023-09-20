@@ -16,7 +16,17 @@ namespace BasicOOP
         void Stop();
     }
 
-    internal class Vehicle : IDrivable
+    internal abstract class AbstractVehicle : IDrivable
+    {
+        public abstract string Turn();
+
+        public virtual string Drive(int distance)
+        {
+            return $"{this.GetType().Name} drove for {distance}";
+        }
+    }
+
+    internal class Vehicle : AbstractVehicle
     {
         public string Brand { get; set; }
 
@@ -25,9 +35,9 @@ namespace BasicOOP
             Brand = brand;
         }
 
-        public virtual string Drive(int distance)
+        public override string Turn()
         {
-            return $"{this.GetType().Name} drove for {distance}";
+            return "Turning";
         }
     }
 
