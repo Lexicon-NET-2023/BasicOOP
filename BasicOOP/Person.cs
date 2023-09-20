@@ -33,6 +33,7 @@ namespace BasicOOP
             // base.Do();
             Console.WriteLine("Admin do");
         }
+
     } 
     
     internal class Admin  : Employee

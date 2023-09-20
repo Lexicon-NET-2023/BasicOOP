@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-          
+
+            string name = "Kalle";
+            var res = name.AddString("Anka");
+            Console.WriteLine(res);
+
             //FirstPart();
             var v = new Vehicle("Volvo");
             var c = new Car("Volvo", "740");
