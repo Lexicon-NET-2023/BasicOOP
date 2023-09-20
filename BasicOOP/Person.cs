@@ -27,6 +27,12 @@ namespace BasicOOP
     internal class Employee  : Person
     {
         public int Salary { get; set; }
+
+        public   void Doing()
+        {
+            // base.Do();
+            Console.WriteLine("Admin do");
+        }
     } 
     
     internal class Admin  : Employee

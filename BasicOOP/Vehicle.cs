@@ -18,6 +18,7 @@ namespace BasicOOP
 
     internal abstract class AbstractVehicle : IDrivable
     {
+        protected bool ProtectedBool;
         public abstract string Turn();
 
         public virtual string Drive(int distance)
@@ -28,7 +29,7 @@ namespace BasicOOP
 
     internal class Vehicle : AbstractVehicle
     {
-        public string Brand { get; set; }
+        public string Brand { get; protected set; }
 
         public Vehicle(string brand)
         {
@@ -37,11 +38,12 @@ namespace BasicOOP
 
         public override string Turn()
         {
+            ProtectedBool = false;
             return "Turning";
         }
     }
 
-    internal class Car  : Vehicle, IStopable 
+    internal /*sealed*/ class Car  : Vehicle, IStopable 
     {
         public string Model { get; set; }
        
@@ -50,7 +52,7 @@ namespace BasicOOP
             Model = model;
         }
 
-        public override string Drive(int distance)
+        public /*sealed*/ override string Drive(int distance)
         {
             return $"{base.Drive(distance)} from car";
         }
@@ -72,5 +74,7 @@ namespace BasicOOP
         {
             return "From Audi";
         }
+
+        
     }
 }
